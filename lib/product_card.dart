@@ -33,55 +33,74 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     return Container(
       width: 160,
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 6,
-            spreadRadius: 2,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // **Trending Tag**
-          if (widget.isTrending)
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: Colors.brown.shade100,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Text(
-                'Trending',
-                style: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown),
-              ),
+          SizedBox(
+            height: 150,
+            child: Stack(
+              children: [
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: 92,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xFFF5F5F5)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(widget.imagePath,
+                          height: 100, width: 100, fit: BoxFit.fill),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                     if (widget.isTrending)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF8C6B8),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: const Text(
+                        'Trending',
+                        style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black),
+                      ),
+                    ),
+                    const Icon(
+                      Icons.favorite_border,
+                      color: Colors.black54,
+                    )
+                  ],
+                ),
+              ],
             ),
-
-          const SizedBox(height: 5),
-
-          // **Product Image**
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child:
-                Image.asset(widget.imagePath, height: 100, fit: BoxFit.contain),
           ),
-
-          const SizedBox(height: 5),
-
-          // **Rating & Discount Badge**
+          SizedBox(height: 5),
+          // Rating & Discount Badge
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // **Black Stars**
+              // Black Stars
               Row(
                 children: List.generate(
                   widget.rating,
@@ -89,7 +108,7 @@ class _ProductCardState extends State<ProductCard> {
                       const Icon(Icons.star, color: Colors.black, size: 14),
                 ),
               ),
-              // **Discount Badge**
+              // Discount Badge
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration: BoxDecoration(
@@ -101,7 +120,7 @@ class _ProductCardState extends State<ProductCard> {
                   style: const TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
-                      color: Colors.red),
+                      color: Color(0xFF902044)),
                 ),
               ),
             ],
@@ -109,7 +128,7 @@ class _ProductCardState extends State<ProductCard> {
 
           const SizedBox(height: 5),
 
-          // **Product Title & Subtitle**
+          // Product Title & Subtitle
           Text(
             widget.title,
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -119,9 +138,7 @@ class _ProductCardState extends State<ProductCard> {
             style: const TextStyle(fontSize: 12, color: Colors.grey),
           ),
 
-          const SizedBox(height: 5),
-
-          // **Price**
+          // Price
           Row(
             children: [
               Text(
@@ -141,9 +158,9 @@ class _ProductCardState extends State<ProductCard> {
             ],
           ),
 
-          const SizedBox(height: 8),
+          const SizedBox(height: 3),
 
-          // **Add to Cart Button OR Quantity Selector**
+          // Add to Cart Button OR Quantity Selector
           quantity == 0
               ? GestureDetector(
                   onTap: () {
@@ -152,7 +169,8 @@ class _ProductCardState extends State<ProductCard> {
                     });
                   },
                   child: Container(
-                    padding: const EdgeInsets.all(6),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 6),
                     decoration: BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(8),
@@ -173,7 +191,7 @@ class _ProductCardState extends State<ProductCard> {
                 )
               : Container(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: Colors.grey.shade400, width: 1),
