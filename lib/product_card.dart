@@ -86,6 +86,7 @@ class _ProductCardState extends State<ProductCard> {
                             color: Colors.black),
                       ),
                     ),
+                    Spacer(),
                     const Icon(
                       Icons.favorite_border,
                       color: Colors.black54,

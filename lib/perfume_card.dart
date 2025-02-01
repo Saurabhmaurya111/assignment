@@ -29,7 +29,7 @@ class PerfumeCard extends StatelessWidget {
                   borderRadius:
                       const BorderRadius.vertical(top: Radius.circular(15)),
                   child: Image.asset(
-                    "lib/icons/l1.png", 
+                    "assets/images/ba1.png", 
                     width: double.infinity,
                     fit: BoxFit.contain,
                   ),

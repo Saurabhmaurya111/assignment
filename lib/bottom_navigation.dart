@@ -39,7 +39,7 @@ class _MyButtomNavBarState extends State<MyBottomNavBar> {
               BottomNavigationBarItem(
                   icon: Icon(Icons.manage_search_rounded, size: 26), label: ""),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite, size: 26), label: ""),
+                  icon: Icon(Icons.favorite_border_outlined, size: 26), label: ""),
               BottomNavigationBarItem(
                   icon: Icon(Icons.person_outline, size: 26), label: ""),
             ]),

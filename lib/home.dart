@@ -23,16 +23,16 @@ class Home extends StatelessWidget {
   ];
 
   final List<Map<String, String>> categories = [
-    {'image': 'lib/icons/1.png', 'name': '   Home \nFregrances'},
-    {'image': 'lib/icons/2.png', 'name': '  Oud & \nBukhour'},
-    {'image': 'lib/icons/3.png', 'name': 'Hair \nMust'},
-    {'image': 'lib/icons/4.png', 'name': 'Mamoul'},
-    {'image': 'lib/icons/5.png', 'name': 'Bukhour'},
+    {'image': 'assets/images/1.png', 'name': '   Home \nFregrances'},
+    {'image': 'assets/images/2.png', 'name': '  Oud & \nBukhour'},
+    {'image': 'assets/images/3.png', 'name': 'Hair \nMust'},
+    {'image': 'assets/images/4.png', 'name': 'Mamoul'},
+    {'image': 'assets/images/5.png', 'name': 'Bukhour'},
   ];
 
   List<ProductCard> productList1 = const [
     ProductCard(
-      imagePath: 'lib/icons/rect1.png',
+      imagePath: 'assets/images/rec1.png',
       title: 'Majesty',
       subtitle: 'EDT',
       rating: 4,
@@ -42,7 +42,7 @@ class Home extends StatelessWidget {
       isTrending: true,
     ),
     ProductCard(
-      imagePath: 'lib/icons/rect2.png',
+      imagePath: 'assets/images/rec2.png',
       title: 'Bakhoor Set',
       subtitle: 'Oud Burner',
       rating: 4,
@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
       isTrending: false,
     ),
     ProductCard(
-      imagePath: 'lib/icons/rect1.png',
+      imagePath: 'assets/images/rec1.png',
       title: 'Majesty',
       subtitle: 'EDT',
       rating: 4,
@@ -86,9 +86,9 @@ class Home extends StatelessWidget {
           ),
         ),
         title: Image.asset(
-          'lib/icons/mid.png',
+          'assets/images/fn.png',
           height: 45,
-          width: 200,
+          width: 150,
           color: Colors.black,
         ),
         actions: const [
@@ -100,6 +100,7 @@ class Home extends StatelessWidget {
             ),
           ),
         ],
+        centerTitle: true,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -308,8 +309,8 @@ class LastBanner extends StatelessWidget {
   });
 
   final List<String> image =[
-        'lib/icons/ll1.png',
-        'lib/icons/ll2.png',
+        'assets/images/lll1.png',
+        'assets/images/lll2.png',
   ];
 
   @override
